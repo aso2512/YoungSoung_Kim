@@ -1,0 +1,73 @@
+
+#assignment2
+1.
+(a)
+scores=c(90,95,89,71,73,96,87,95,107,89,96,80,97,95,102,97,93,101,82,83,74,91,83,98,95,111,99,120,93,84)
+u=mean(scores)
+
+(b) I think estimate in (a) is approximately same with population parameter,
+since the scores is sampled.
+
+(c)
+var=var(scores)
+se=sqrt(var)/sqrt(30) #SE=q/sqrt(n)
+
+(d)
+standard error is the level of error (dispersion) of your data from 
+a population mean
+
+(e)calculate C.I
+u-2*se #lower boundary
+u+2*se #upper boundary
+
+(f) 
+Because u is belongs to the confindent interval, I can say that the estimate
+in (a) is statistically significant.
+
+2.
+male=c(220.1,218.6,229.6,228.8,222.0,224.1,226.5)
+female=c(223.4,221.5,230.2,224.3,223.8,230.8)
+
+#null hypothesis: mu(male)=mu(female)
+#alternavtive hypothesis: mu(male) is not same with mu(female)
+par(mfrow=c(2,1))
+hist(male); hist(female)
+
+mean(male)
+mean(female)
+sd(male)
+sd(female)
+
+t.test(male,female,alternative="two.sided", var.equal=TRUE)
+
+
+3.
+a. False. Because the null hypothesis is rejected, I can say the the 
+treatment has enough effect.
+b. True. I don't know well about the exact meaning of some. But, in my opinion, 
+as i said in a, the has some effect.
+c. False. In paragraph, researcher use significance level of 5%. 
+So, probability of committing a Type I error is 0.05.
+d. Falese. Because null hypothesis is rejected, null hypothesis is false.
+p-value=Pr(Z>0)+Pr(Z<0)=1-Pr(Z=0)=0.04
+So, Pr(Z=0)=0.96. The Type ll Error is take null hypothesis when alternative
+hypothesis is true. The probability of null hypothesis that same with
+probability of Type ll Error is 0.96. 
+e. True.
+
+4.
+pA=c(248,236,269,254,249,251,260,245,239,255)
+pB=c(380,391,377,392,398,374)
+pA2=1.5*pA
+par(mfrow=c(2,1))
+hist(pA2,xlim=c(350,410)); hist(pB,xlim=c(350,410))
+When compared the pA2 with pB in histogram, we can see they are not same.
+To compare them more exaxtly, do the t-test.
+t.test(pA2,pB,alternative="two.sided", var.equal=TRUE)
+The p-value of t-test is higher than significant level of 5%. 
+So, we can't reject null hypothesis.
+
+5.
+Standard deviation is a measure of dispersion within your data set 
+whereas standard error is the level of error (dispersion) of your data from 
+a population mean
